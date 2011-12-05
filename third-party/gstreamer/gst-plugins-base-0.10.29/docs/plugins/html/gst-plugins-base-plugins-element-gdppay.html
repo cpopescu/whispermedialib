@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gdppay</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Base Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-base Elements">
+<link rel="prev" href="gst-plugins-base-plugins-element-gdpdepay.html" title="gdpdepay">
+<link rel="next" href="gst-plugins-base-plugins-element-giosink.html" title="giosink">
+<meta name="generator" content="GTK-Doc V1.14 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-base-plugins-element-gdpdepay.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Base Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-base-plugins-element-giosink.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-base-plugins-element-gdppay.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-base-plugins-element-gdppay.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-base-plugins-element-gdppay.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-base-plugins-element-gdppay.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="gdppay">
+<a name="gst-plugins-base-plugins-element-gdppay"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-base-plugins-element-gdppay.top_of_page"></a>gdppay</span></h2>
+<p>gdppay — Payloads GStreamer Data Protocol buffers</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-base-plugins-element-gdppay.synopsis"></a><h2>Synopsis</h2>
+<a name="GstGDPPay"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-base-plugins-element-gdppay.html#GstGDPPay-struct" title="GstGDPPay">GstGDPPay</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-base-plugins-element-gdppay.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----GstGDPPay
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-base-plugins-element-gdppay.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-base-plugins-element-gdppay.html#GstGDPPay--crc-header" title='The "crc-header" property'>crc-header</a>"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-base-plugins-element-gdppay.html#GstGDPPay--crc-payload" title='The "crc-payload" property'>crc-payload</a>"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-base-plugins-element-gdppay.html#GstGDPPay--version" title='The "version" property'>version</a>"                  <a href="/usr/share/gtk-doc/html/gstreamer-libs-0.10/gstreamer-libs-gstdataprotocol.html#GstDPVersion"><span class="type">GstDPVersion</span></a>          : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-base-plugins-element-gdppay.description"></a><h2>Description</h2>
+<p>
+This element payloads GStreamer buffers and events using the
+GStreamer Data Protocol.
+</p>
+<div class="refsect2">
+<a name="id401629"></a><div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v <span class="symbol">-</span>m videotestsrc num<span class="symbol">-</span>buffers<span class="symbol">=</span><span class="number">50</span> <span class="symbol">!</span> gdppay <span class="symbol">!</span> filesink location<span class="symbol">=</span>test<span class="symbol">.</span>gdp</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ This pipeline creates a serialized video stream that can be played back
+with the example shown in gdpdepay.
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-base-plugins-element-gdppay.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstGDPPay">
+<a name="GstGDPPay-struct"></a><h3>GstGDPPay</h3>
+<pre class="programlisting">typedef struct _GstGDPPay GstGDPPay;</pre>
+<p>
+Private gdppay element structure.
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-base-plugins-element-gdppay.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "crc-header" property'>
+<a name="GstGDPPay--crc-header"></a><h3>The <code class="literal">"crc-header"</code> property</h3>
+<pre class="programlisting">  "crc-header"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Calculate and store a CRC checksum on the header.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "crc-payload" property'>
+<a name="GstGDPPay--crc-payload"></a><h3>The <code class="literal">"crc-payload"</code> property</h3>
+<pre class="programlisting">  "crc-payload"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Calculate and store a CRC checksum on the payload.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "version" property'>
+<a name="GstGDPPay--version"></a><h3>The <code class="literal">"version"</code> property</h3>
+<pre class="programlisting">  "version"                  <a href="/usr/share/gtk-doc/html/gstreamer-libs-0.10/gstreamer-libs-gstdataprotocol.html#GstDPVersion"><span class="type">GstDPVersion</span></a>          : Read / Write</pre>
+<p>Version of the GStreamer Data Protocol.</p>
+<p>Default value: GDP Version 1.0</p>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="gst-plugins-base-plugins-element-gdppay.see-also"></a><h2>See Also</h2>
+gdpdepay
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.14</div>
+</body>
+</html>

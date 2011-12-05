@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gst-plugins-bad 0.10.19\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/\n"
+"POT-Creation-Date: 2010-05-31 02:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ext/resindvd/resindvdsrc.c:361
+msgid "Could not read title information for DVD."
+msgstr ""
+
+#: ext/resindvd/resindvdsrc.c:367
+#, c-format
+msgid "Failed to open DVD device '%s'."
+msgstr ""
+
+#: ext/resindvd/resindvdsrc.c:373
+msgid "Failed to set PGC based seeking."
+msgstr ""
+
+#: ext/sndfile/gstsfsink.c:273 ext/sndfile/gstsfsrc.c:341
+msgid "No file name specified for writing."
+msgstr ""
+
+#: ext/sndfile/gstsfsink.c:286 ext/sndfile/gstsfsrc.c:347
+#, c-format
+msgid "Could not open file \"%s\" for writing."
+msgstr ""
+
+#: ext/sndfile/gstsfsink.c:436 gst/nuvdemux/gstnuvdemux.c:734
+msgid "Internal data stream error."
+msgstr ""
+
+#: ext/sndfile/gstsfsink.c:490 ext/sndfile/gstsfsink.c:498
+#, c-format
+msgid "Could not write to file \"%s\"."
+msgstr ""
+
+#: gst/aiff/aiffparse.c:1269
+msgid "Internal data flow error."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:704 sys/dvb/gstdvbsrc.c:797
+#, c-format
+msgid "Device \"%s\" does not exist."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:708
+#, c-format
+msgid "Could not open frontend device \"%s\"."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:720
+#, c-format
+msgid "Could not get settings from frontend device \"%s\"."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:801
+#, c-format
+msgid "Could not open file \"%s\" for reading."
+msgstr ""

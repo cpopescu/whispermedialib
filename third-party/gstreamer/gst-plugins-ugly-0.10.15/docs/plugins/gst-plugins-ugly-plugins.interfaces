@@ -1,0 +1,13 @@
+GstBin GstChildProxy
+GstPipeline GstChildProxy
+GstDvdReadSrc GstURIHandler
+GstCddaBaseSrc GstURIHandler
+GstCdioCddaSrc GstURIHandler
+GstPNMSrc GstURIHandler
+GstX264Enc GstPreset
+GstTwoLame GstPreset
+GstLameMP3Enc GstPreset
+GstLame GstTagSetter GstPreset
+GstAmrnbEnc GstPreset
+GstRTSPReal GstRTSPExtension
+GstRTSPWMS GstRTSPExtension

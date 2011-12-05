@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dccpclientsink</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Bad Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-bad Elements">
+<link rel="prev" href="gst-plugins-bad-plugins-dataurisrc.html" title="dataurisrc">
+<link rel="next" href="gst-plugins-bad-plugins-dccpclientsrc.html" title="dccpclientsrc">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-bad-plugins-dataurisrc.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Bad Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-bad-plugins-dccpclientsrc.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-bad-plugins-dccpclientsink.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-dccpclientsink.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-dccpclientsink.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-dccpclientsink.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-dccpclientsink.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="dccpclientsink">
+<a name="gst-plugins-bad-plugins-dccpclientsink"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-bad-plugins-dccpclientsink.top_of_page"></a>dccpclientsink</span></h2>
+<p>dccpclientsink — Send data as a client over the network via DCCP</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-bad-plugins-dccpclientsink.synopsis"></a><h2>Synopsis</h2>
+<a name="GstDCCPClientSink"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-bad-plugins-dccpclientsink.html#GstDCCPClientSink-struct" title="GstDCCPClientSink">GstDCCPClientSink</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-bad-plugins-dccpclientsink.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----<a href="/usr/share/gtk-doc/html/gstreamer-libs-0.10/GstBaseSink.html">GstBaseSink</a>
+                     +----GstDCCPClientSink
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-bad-plugins-dccpclientsink.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-bad-plugins-dccpclientsink.html#GstDCCPClientSink--ccid" title='The "ccid" property'>ccid</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-dccpclientsink.html#GstDCCPClientSink--close-socket" title='The "close-socket" property'>close-socket</a>"             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-dccpclientsink.html#GstDCCPClientSink--host" title='The "host" property'>host</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-dccpclientsink.html#GstDCCPClientSink--port" title='The "port" property'>port</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-dccpclientsink.html#GstDCCPClientSink--sockfd" title='The "sockfd" property'>sockfd</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="gst-plugins-bad-plugins-dccpclientsink.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-bad-plugins-dccpclientsink.html#GstDCCPClientSink-connected" title='The "connected" signal'>connected</a>"                                      : Run First
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-bad-plugins-dccpclientsink.description"></a><h2>Description</h2>
+<p>
+This element connect to a DCCP server and send data to it.
+<a class="ulink" href="http://www.linuxfoundation.org/en/Net:DCCP" target="_top">DCCP</a> (Datagram
+Congestion Control Protocol) is a Transport Layer protocol like
+TCP and UDP.
+</p>
+<div class="refsect2" title="Example pipeline">
+<a name="id360499"></a><h3>Example pipeline</h3>
+<p>
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v filesrc location<span class="symbol">=</span>music<span class="symbol">.</span>mp3 <span class="symbol">!</span> mp3parse <span class="symbol">!</span> dccpclientsink host<span class="symbol">=</span>localhost port<span class="symbol">=</span><span class="number">9011</span> ccid<span class="symbol">=</span><span class="number">2</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p> Client
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v dccpserversrc port<span class="symbol">=</span><span class="number">9011</span> ccid<span class="symbol">=</span><span class="number">2</span> <span class="symbol">!</span> decodebin <span class="symbol">!</span> alsasink</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p> Server
+</p>
+<p>
+This example pipeline will send a MP3 stream to the server using DCCP.
+The server will decode the MP3 and play it.
+Run the server pipeline first than the client pipeline.
+</p>
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-bad-plugins-dccpclientsink.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstDCCPClientSink">
+<a name="GstDCCPClientSink-struct"></a><h3>GstDCCPClientSink</h3>
+<pre class="programlisting">typedef struct _GstDCCPClientSink GstDCCPClientSink;</pre>
+<p>
+dccpclientsink object structure.
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-bad-plugins-dccpclientsink.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "ccid" property'>
+<a name="GstDCCPClientSink--ccid"></a><h3>The <code class="literal">"ccid"</code> property</h3>
+<pre class="programlisting">  "ccid"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>The Congestion Control IDentified to be used.</p>
+<p>Allowed values: &gt;= 2</p>
+<p>Default value: 2</p>
+</div>
+<hr>
+<div class="refsect2" title='The "close-socket" property'>
+<a name="GstDCCPClientSink--close-socket"></a><h3>The <code class="literal">"close-socket"</code> property</h3>
+<pre class="programlisting">  "close-socket"             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Close socket at end of stream.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "host" property'>
+<a name="GstDCCPClientSink--host"></a><h3>The <code class="literal">"host"</code> property</h3>
+<pre class="programlisting">  "host"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>The host IP address to send packets to.</p>
+<p>Default value: "127.0.0.1"</p>
+</div>
+<hr>
+<div class="refsect2" title='The "port" property'>
+<a name="GstDCCPClientSink--port"></a><h3>The <code class="literal">"port"</code> property</h3>
+<pre class="programlisting">  "port"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>The port to send the packets to.</p>
+<p>Allowed values: [0,65535]</p>
+<p>Default value: 5001</p>
+</div>
+<hr>
+<div class="refsect2" title='The "sockfd" property'>
+<a name="GstDCCPClientSink--sockfd"></a><h3>The <code class="literal">"sockfd"</code> property</h3>
+<pre class="programlisting">  "sockfd"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>The socket file descriptor.</p>
+<p>Allowed values: &gt;= G_MAXULONG</p>
+<p>Default value: -1</p>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="gst-plugins-bad-plugins-dccpclientsink.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "connected" signal'>
+<a name="GstDCCPClientSink-connected"></a><h3>The <code class="literal">"connected"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="gst-plugins-bad-plugins-dccpclientsink.html#GstDCCPClientSink"><span class="type">GstDCCPClientSink</span></a> *gstdccpclientsink,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>               arg1,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)              : Run First</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gstdccpclientsink</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="gst-plugins-bad-plugins-dccpclientsink.see-also"></a><h2>See Also</h2>
+dccpserversrc, dccpclientsrc, dccpserversink
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

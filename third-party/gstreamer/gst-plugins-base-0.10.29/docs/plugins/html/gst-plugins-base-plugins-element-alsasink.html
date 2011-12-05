@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>alsasink</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Base Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-base Elements">
+<link rel="prev" href="gst-plugins-base-plugins-element-alsamixer.html" title="alsamixer">
+<link rel="next" href="gst-plugins-base-plugins-element-alsasrc.html" title="alsasrc">
+<meta name="generator" content="GTK-Doc V1.14 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-base-plugins-element-alsamixer.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Base Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-base-plugins-element-alsasrc.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-base-plugins-element-alsasink.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-base-plugins-element-alsasink.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-base-plugins-element-alsasink.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-base-plugins-element-alsasink.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#gst-plugins-base-plugins-element-alsasink.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="alsasink">
+<a name="gst-plugins-base-plugins-element-alsasink"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-base-plugins-element-alsasink.top_of_page"></a>alsasink</span></h2>
+<p>alsasink — Output to a sound card via ALSA</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-base-plugins-element-alsasink.synopsis"></a><h2>Synopsis</h2>
+<a name="GstAlsaSink"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-base-plugins-element-alsasink.html#GstAlsaSink-struct" title="GstAlsaSink">GstAlsaSink</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-base-plugins-element-alsasink.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----<a href="/usr/share/gtk-doc/html/gstreamer-libs-0.10/GstBaseSink.html">GstBaseSink</a>
+                     +----<a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-0.10/gst-plugins-base-libs-gstbaseaudiosink.html#GstBaseAudioSink">GstBaseAudioSink</a>
+                           +----<a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-0.10/gst-plugins-base-libs-gstaudiosink.html#GstAudioSink">GstAudioSink</a>
+                                 +----GstAlsaSink
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="gst-plugins-base-plugins-element-alsasink.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GstAlsaSink implements
+ <a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-0.10/gst-plugins-base-libs-gstpropertyprobe.html#GstPropertyProbe">GstPropertyProbe</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-base-plugins-element-alsasink.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-base-plugins-element-alsasink.html#GstAlsaSink--device" title='The "device" property'>device</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="gst-plugins-base-plugins-element-alsasink.html#GstAlsaSink--device-name" title='The "device-name" property'>device-name</a>"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-base-plugins-element-alsasink.description"></a><h2>Description</h2>
+<p>
+This element renders raw audio samples using the ALSA api.
+</p>
+<div class="refsect2" title="Example pipelines">
+<a name="id397449"></a><h3>Example pipelines</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v filesrc location<span class="symbol">=</span>sine<span class="symbol">.</span>ogg <span class="symbol">!</span> oggdemux <span class="symbol">!</span> vorbisdec <span class="symbol">!</span> audioconvert <span class="symbol">!</span> audioresample <span class="symbol">!</span> alsasink</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ Play an Ogg/Vorbis file.
+</div>
+<p>
+Last reviewed on 2006-03-01 (0.10.4)
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-base-plugins-element-alsasink.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstAlsaSink">
+<a name="GstAlsaSink-struct"></a><h3>GstAlsaSink</h3>
+<pre class="programlisting">typedef struct _GstAlsaSink GstAlsaSink;</pre>
+<p>
+Opaque data structure
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-base-plugins-element-alsasink.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "device" property'>
+<a name="GstAlsaSink--device"></a><h3>The <code class="literal">"device"</code> property</h3>
+<pre class="programlisting">  "device"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>ALSA device, as defined in an asound configuration file.</p>
+<p>Default value: "default"</p>
+</div>
+<hr>
+<div class="refsect2" title='The "device-name" property'>
+<a name="GstAlsaSink--device-name"></a><h3>The <code class="literal">"device-name"</code> property</h3>
+<pre class="programlisting">  "device-name"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p>Human-readable name of the sound device.</p>
+<p>Default value: ""</p>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="gst-plugins-base-plugins-element-alsasink.see-also"></a><h2>See Also</h2>
+alsasrc, alsamixer
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.14</div>
+</body>
+</html>

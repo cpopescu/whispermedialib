@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>lamemp3enc</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Ugly Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-ugly Elements">
+<link rel="prev" href="gst-plugins-ugly-plugins-lame.html" title="lame">
+<link rel="next" href="gst-plugins-ugly-plugins-mad.html" title="mad">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-ugly-plugins-lame.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Ugly Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-ugly-plugins-mad.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-ugly-plugins-lamemp3enc.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-ugly-plugins-lamemp3enc.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-ugly-plugins-lamemp3enc.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-ugly-plugins-lamemp3enc.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#gst-plugins-ugly-plugins-lamemp3enc.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="lamemp3enc">
+<a name="gst-plugins-ugly-plugins-lamemp3enc"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-ugly-plugins-lamemp3enc.top_of_page"></a>lamemp3enc</span></h2>
+<p>lamemp3enc — High-quality free MP3 encoder</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-ugly-plugins-lamemp3enc.synopsis"></a><h2>Synopsis</h2>
+<a name="GstLameMP3Enc"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc-struct" title="GstLameMP3Enc">GstLameMP3Enc</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-ugly-plugins-lamemp3enc.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----GstLameMP3Enc
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="gst-plugins-ugly-plugins-lamemp3enc.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GstLameMP3Enc implements
+ <a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstPreset.html">GstPreset</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-ugly-plugins-lamemp3enc.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc--bitrate" title='The "bitrate" property'>bitrate</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc--cbr" title='The "cbr" property'>cbr</a>"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc--encoding-engine-quality" title='The "encoding-engine-quality" property'>encoding-engine-quality</a>"  <span class="type">GstLameMP3EncEncodingEngineQuality</span>  : Read / Write
+  "<a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc--fast-vbr" title='The "fast-vbr" property'>fast-vbr</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc--mono" title='The "mono" property'>mono</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc--target" title='The "target" property'>target</a>"                   <span class="type">GstLameMP3EncTarget</span>   : Read / Write
+  "<a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc--vbr-quality" title='The "vbr-quality" property'>vbr-quality</a>"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gfloat"><span class="type">gfloat</span></a>                : Read / Write
+  "<a class="link" href="gst-plugins-ugly-plugins-lamemp3enc.html#GstLameMP3Enc--quality" title='The "quality" property'>quality</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gfloat"><span class="type">gfloat</span></a>                : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-ugly-plugins-lamemp3enc.description"></a><h2>Description</h2>
+<p>
+This element encodes raw integer audio into an MPEG-1 layer 3 (MP3) stream.
+Note that <a class="ulink" href="http://en.wikipedia.org/wiki/MP3" target="_top">MP3</a> is not
+a free format, there are licensing and patent issues to take into
+consideration. See <a class="ulink" href="http://www.vorbis.com/" target="_top">Ogg/Vorbis</a>
+for a royalty free (and often higher quality) alternative.
+</p>
+<div class="refsect2" title="Output sample rate">
+<a name="id342148"></a><h3>Output sample rate</h3>
+If no fixed output sample rate is negotiated on the element's src pad,
+the element will choose an optimal sample rate to resample to internally.
+For example, a 16-bit 44.1 KHz mono audio stream encoded at 48 kbit will
+get resampled to 32 KHz.  Use filter caps on the src pad to force a
+particular sample rate.
+</div>
+<hr>
+<div class="refsect2" title="Example pipelines">
+<a name="id342158"></a><h3>Example pipelines</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v audiotestsrc wave<span class="symbol">=</span>sine num<span class="symbol">-</span>buffers<span class="symbol">=</span><span class="number">100</span> <span class="symbol">!</span> audioconvert <span class="symbol">!</span> lamemp3enc <span class="symbol">!</span> filesink location<span class="symbol">=</span>sine<span class="symbol">.</span>mp3</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ Encode a test sine signal to MP3.
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v alsasrc <span class="symbol">!</span> audioconvert <span class="symbol">!</span> lamemp3enc target<span class="symbol">=</span>bitrate bitrate<span class="symbol">=</span><span class="number">192</span> <span class="symbol">!</span> filesink location<span class="symbol">=</span>alsasrc<span class="symbol">.</span>mp3</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ Record from a sound card using ALSA and encode to MP3 with an average bitrate of 192kbps
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v filesrc location<span class="symbol">=</span>music<span class="symbol">.</span>wav <span class="symbol">!</span> decodebin <span class="symbol">!</span> audioconvert <span class="symbol">!</span> audioresample <span class="symbol">!</span> lamemp3enc target<span class="symbol">=</span>quality quality<span class="symbol">=</span><span class="number">0</span> <span class="symbol">!</span> id3v2mux <span class="symbol">!</span> filesink location<span class="symbol">=</span>music<span class="symbol">.</span>mp3</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ Transcode from a .wav file to MP3 (the id3v2mux element is optional) with best VBR quality
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v cdda<span class="symbol">:</span><span class="gtkdoc slc">//5 ! audioconvert ! lamemp3enc target=bitrate cbr=true bitrate=192 ! filesink location=track5.mp3</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ Encode Audio CD track 5 to MP3 with a constant bitrate of 192kbps
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v audiotestsrc num<span class="symbol">-</span>buffers<span class="symbol">=</span><span class="number">10</span> <span class="symbol">!</span> audio<span class="symbol">/</span>x<span class="symbol">-</span>raw<span class="symbol">-</span><span class="gtkdoc kwb">int</span><span class="symbol">,</span>rate<span class="symbol">=</span><span class="number">44100</span><span class="symbol">,</span>channels<span class="symbol">=</span><span class="number">1</span> <span class="symbol">!</span> lamemp3enc target<span class="symbol">=</span>bitrate cbr<span class="symbol">=</span><span class="keyword">true</span> bitrate<span class="symbol">=</span><span class="number">48</span> <span class="symbol">!</span> filesink location<span class="symbol">=</span>test<span class="symbol">.</span>mp3</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ Encode to a fixed sample rate
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-ugly-plugins-lamemp3enc.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstLameMP3Enc">
+<a name="GstLameMP3Enc-struct"></a><h3>GstLameMP3Enc</h3>
+<pre class="programlisting">typedef struct _GstLameMP3Enc GstLameMP3Enc;</pre>
+<p>
+Opaque data structure.
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-ugly-plugins-lamemp3enc.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "bitrate" property'>
+<a name="GstLameMP3Enc--bitrate"></a><h3>The <code class="literal">"bitrate"</code> property</h3>
+<pre class="programlisting">  "bitrate"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>Bitrate in kbit/sec (Only valid if target is bitrate, for CBR one of 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256 or 320).</p>
+<p>Allowed values: [8,320]</p>
+<p>Default value: 128</p>
+</div>
+<hr>
+<div class="refsect2" title='The "cbr" property'>
+<a name="GstLameMP3Enc--cbr"></a><h3>The <code class="literal">"cbr"</code> property</h3>
+<pre class="programlisting">  "cbr"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Enforce constant bitrate encoding (Only valid if target is bitrate).</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "encoding-engine-quality" property'>
+<a name="GstLameMP3Enc--encoding-engine-quality"></a><h3>The <code class="literal">"encoding-engine-quality"</code> property</h3>
+<pre class="programlisting">  "encoding-engine-quality"  <span class="type">GstLameMP3EncEncodingEngineQuality</span>  : Read / Write</pre>
+<p>Quality/speed of the encoding engine, this does not affect the bitrate!.</p>
+<p>Default value: Standard</p>
+</div>
+<hr>
+<div class="refsect2" title='The "fast-vbr" property'>
+<a name="GstLameMP3Enc--fast-vbr"></a><h3>The <code class="literal">"fast-vbr"</code> property</h3>
+<pre class="programlisting">  "fast-vbr"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Use fast VBR encoding.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "mono" property'>
+<a name="GstLameMP3Enc--mono"></a><h3>The <code class="literal">"mono"</code> property</h3>
+<pre class="programlisting">  "mono"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Enforce mono encoding.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "target" property'>
+<a name="GstLameMP3Enc--target"></a><h3>The <code class="literal">"target"</code> property</h3>
+<pre class="programlisting">  "target"                   <span class="type">GstLameMP3EncTarget</span>   : Read / Write</pre>
+<p>Optimize for quality or bitrate.</p>
+<p>Default value: Quality</p>
+</div>
+<hr>
+<div class="refsect2" title='The "vbr-quality" property'>
+<a name="GstLameMP3Enc--vbr-quality"></a><h3>The <code class="literal">"vbr-quality"</code> property</h3>
+<pre class="programlisting">  "vbr-quality"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gfloat"><span class="type">gfloat</span></a>                : Read / Write</pre>
+<p>VBR Quality from 0 to 10, 0 being the best.</p>
+<p>Allowed values: [0,9.999]</p>
+<p>Default value: 4</p>
+</div>
+<hr>
+<div class="refsect2" title='The "quality" property'>
+<a name="GstLameMP3Enc--quality"></a><h3>The <code class="literal">"quality"</code> property</h3>
+<pre class="programlisting">  "quality"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gfloat"><span class="type">gfloat</span></a>                : Read / Write</pre>
+<p>VBR Quality from 0 to 10, 0 being the best (Only valid if target is quality).</p>
+<p>Allowed values: [0,9.999]</p>
+<p>Default value: 4</p>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="gst-plugins-ugly-plugins-lamemp3enc.see-also"></a><h2>See Also</h2>
+lame, mad, vorbisenc
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

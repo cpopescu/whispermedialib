@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>videomixer</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Good Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-good Elements">
+<link rel="prev" href="gst-plugins-good-plugins-videoflip.html" title="videoflip">
+<link rel="next" href="gst-plugins-good-plugins-warptv.html" title="warptv">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-good-plugins-videoflip.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Good Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-good-plugins-warptv.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-good-plugins-videomixer.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-videomixer.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-videomixer.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-videomixer.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-videomixer.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="videomixer">
+<a name="gst-plugins-good-plugins-videomixer"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-good-plugins-videomixer.top_of_page"></a>videomixer</span></h2>
+<p>videomixer — Mix multiple video streams</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-good-plugins-videomixer.synopsis"></a><h2>Synopsis</h2>
+<a name="GstVideoMixer"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-good-plugins-videomixer.html#GstVideoMixer-struct" title="GstVideoMixer">GstVideoMixer</a>;
+enum                <a class="link" href="gst-plugins-good-plugins-videomixer.html#GstVideoMixerBackground" title="enum GstVideoMixerBackground">GstVideoMixerBackground</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-good-plugins-videomixer.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----GstVideoMixer
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="gst-plugins-good-plugins-videomixer.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GstVideoMixer implements
+ <a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstChildProxy.html">GstChildProxy</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-good-plugins-videomixer.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-good-plugins-videomixer.html#GstVideoMixer--background" title='The "background" property'>background</a>"               <a class="link" href="gst-plugins-good-plugins-videomixer.html#GstVideoMixerBackground" title="enum GstVideoMixerBackground"><span class="type">GstVideoMixerBackground</span></a>  : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-good-plugins-videomixer.description"></a><h2>Description</h2>
+<p>
+Videomixer can accept AYUV, ARGB and BGRA video streams. For each of the requested
+sink pads it will compare the incoming geometry and framerate to define the
+output parameters. Indeed output video frames will have the geometry of the
+biggest incoming video stream and the framerate of the fastest incoming one.
+</p>
+<p>
+All sink pads must be either AYUV, ARGB or BGRA, but a mixture of them is not 
+supported. The src pad will have the same colorspace as the sinks. 
+No colorspace conversion is done. 
+</p>
+<p>
+Individual parameters for each input stream can be configured on the
+<a class="link" href="GstVideoMixerPad.html" title="GstVideoMixerPad"><span class="type">GstVideoMixerPad</span></a>.
+</p>
+<div class="refsect2" title="Sample pipelines">
+<a name="id603945"></a><h3>Sample pipelines</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch videotestsrc pattern<span class="symbol">=</span><span class="number">1</span> <span class="symbol">!</span> video<span class="symbol">/</span>x<span class="symbol">-</span>raw<span class="symbol">-</span>yuv<span class="symbol">,</span> framerate<span class="symbol">=</span>\<span class="symbol">(</span>fraction\<span class="symbol">)</span><span class="number">10</span><span class="symbol">/</span><span class="number">1</span><span class="symbol">,</span> width<span class="symbol">=</span><span class="number">100</span><span class="symbol">,</span> height<span class="symbol">=</span><span class="number">100</span> <span class="symbol">!</span> videobox border<span class="symbol">-</span>alpha<span class="symbol">=</span><span class="number">0</span> alpha<span class="symbol">=</span><span class="number">0.5</span> top<span class="symbol">=-</span><span class="number">70</span> bottom<span class="symbol">=-</span><span class="number">70</span> right<span class="symbol">=-</span><span class="number">220</span> <span class="symbol">!</span> videomixer name<span class="symbol">=</span>mix <span class="symbol">!</span> ffmpegcolorspace <span class="symbol">!</span> xvimagesink videotestsrc <span class="symbol">!</span> video<span class="symbol">/</span>x<span class="symbol">-</span>raw<span class="symbol">-</span>yuv<span class="symbol">,</span> framerate<span class="symbol">=</span>\<span class="symbol">(</span>fraction\<span class="symbol">)</span><span class="number">5</span><span class="symbol">/</span><span class="number">1</span><span class="symbol">,</span> width<span class="symbol">=</span><span class="number">320</span><span class="symbol">,</span> height<span class="symbol">=</span><span class="number">240</span> <span class="symbol">!</span> alpha alpha<span class="symbol">=</span><span class="number">0.7</span> <span class="symbol">!</span> mix<span class="symbol">.</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ A pipeline to demonstrate videomixer used together with videobox.
+This should show a 320x240 pixels video test source with some transparency
+showing the background checker pattern. Another video test source with just
+the snow pattern of 100x100 pixels is overlayed on top of the first one on
+the left vertically centered with a small transparency showing the first
+video test source behind and the checker pattern under it. Note that the
+framerate of the output video is 10 frames per second.
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch videotestsrc pattern<span class="symbol">=</span><span class="number">1</span> <span class="symbol">!</span> video<span class="symbol">/</span>x<span class="symbol">-</span>raw<span class="symbol">-</span>rgb<span class="symbol">,</span> framerate<span class="symbol">=</span>\<span class="symbol">(</span>fraction\<span class="symbol">)</span><span class="number">10</span><span class="symbol">/</span><span class="number">1</span><span class="symbol">,</span> width<span class="symbol">=</span><span class="number">100</span><span class="symbol">,</span> height<span class="symbol">=</span><span class="number">100</span> <span class="symbol">!</span> videomixer name<span class="symbol">=</span>mix <span class="symbol">!</span> ffmpegcolorspace <span class="symbol">!</span> ximagesink videotestsrc <span class="symbol">!</span> video<span class="symbol">/</span>x<span class="symbol">-</span>raw<span class="symbol">-</span>rgb<span class="symbol">,</span> framerate<span class="symbol">=</span>\<span class="symbol">(</span>fraction\<span class="symbol">)</span><span class="number">5</span><span class="symbol">/</span><span class="number">1</span><span class="symbol">,</span> width<span class="symbol">=</span><span class="number">320</span><span class="symbol">,</span> height<span class="symbol">=</span><span class="number">240</span> <span class="symbol">!</span> mix<span class="symbol">.</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ A pipeline to demostrate bgra mixing. (This does not demonstrate alpha blending). 
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch   videotestsrc pattern<span class="symbol">=</span><span class="number">1</span> <span class="symbol">!</span> video<span class="symbol">/</span>x<span class="symbol">-</span>raw<span class="symbol">-</span>yuv<span class="symbol">,</span>format <span class="symbol">=</span>\<span class="symbol">(</span>fourcc\<span class="symbol">)</span>I420<span class="symbol">,</span> framerate<span class="symbol">=</span>\<span class="symbol">(</span>fraction\<span class="symbol">)</span><span class="number">10</span><span class="symbol">/</span><span class="number">1</span><span class="symbol">,</span> width<span class="symbol">=</span><span class="number">100</span><span class="symbol">,</span> height<span class="symbol">=</span><span class="number">100</span> <span class="symbol">!</span> videomixer name<span class="symbol">=</span>mix <span class="symbol">!</span> ffmpegcolorspace <span class="symbol">!</span> ximagesink videotestsrc <span class="symbol">!</span> video<span class="symbol">/</span>x<span class="symbol">-</span>raw<span class="symbol">-</span>yuv<span class="symbol">,</span>format<span class="symbol">=</span>\<span class="symbol">(</span>fourcc\<span class="symbol">)</span>I420<span class="symbol">,</span> framerate<span class="symbol">=</span>\<span class="symbol">(</span>fraction\<span class="symbol">)</span><span class="number">5</span><span class="symbol">/</span><span class="number">1</span><span class="symbol">,</span> width<span class="symbol">=</span><span class="number">320</span><span class="symbol">,</span> height<span class="symbol">=</span><span class="number">240</span> <span class="symbol">!</span> mix<span class="symbol">.</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ A pipeline to test I420
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-good-plugins-videomixer.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstVideoMixer">
+<a name="GstVideoMixer-struct"></a><h3>GstVideoMixer</h3>
+<pre class="programlisting">typedef struct _GstVideoMixer GstVideoMixer;</pre>
+<p>
+The opaque <a class="link" href="gst-plugins-good-plugins-videomixer.html#GstVideoMixer"><span class="type">GstVideoMixer</span></a> structure.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum GstVideoMixerBackground">
+<a name="GstVideoMixerBackground"></a><h3>enum GstVideoMixerBackground</h3>
+<pre class="programlisting">typedef enum
+{
+  VIDEO_MIXER_BACKGROUND_CHECKER,
+  VIDEO_MIXER_BACKGROUND_BLACK,
+  VIDEO_MIXER_BACKGROUND_WHITE
+}
+GstVideoMixerBackground;
+</pre>
+<p>
+The different backgrounds videomixer can blend over.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="VIDEO-MIXER-BACKGROUND-CHECKER:CAPS"></a><span class="term"><code class="literal">VIDEO_MIXER_BACKGROUND_CHECKER</code></span></p></td>
+<td>checker pattern background
+</td>
+</tr>
+<tr>
+<td><p><a name="VIDEO-MIXER-BACKGROUND-BLACK:CAPS"></a><span class="term"><code class="literal">VIDEO_MIXER_BACKGROUND_BLACK</code></span></p></td>
+<td>solid color black background
+</td>
+</tr>
+<tr>
+<td><p><a name="VIDEO-MIXER-BACKGROUND-WHITE:CAPS"></a><span class="term"><code class="literal">VIDEO_MIXER_BACKGROUND_WHITE</code></span></p></td>
+<td>solid color white background
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-good-plugins-videomixer.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "background" property'>
+<a name="GstVideoMixer--background"></a><h3>The <code class="literal">"background"</code> property</h3>
+<pre class="programlisting">  "background"               <a class="link" href="gst-plugins-good-plugins-videomixer.html#GstVideoMixerBackground" title="enum GstVideoMixerBackground"><span class="type">GstVideoMixerBackground</span></a>  : Read / Write</pre>
+<p>Background type.</p>
+<p>Default value: Checker pattern</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

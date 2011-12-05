@@ -1,0 +1,175 @@
+
+Release notes for GStreamer Bad Plug-ins 0.10.8 "Vapour Trails"
+        
+
+
+The GStreamer team is proud to announce a new release
+in the 0.10.x stable series of the
+GStreamer Bad Plug-ins.
+
+
+The 0.10.x series is a stable series targeted at end users.
+It is not API or ABI compatible with the stable 0.8.x series.
+It is, however, parallel installable with the 0.8.x series.
+
+
+
+"That an accusation?"
+
+
+No perfectly groomed moustache or any amount of fine clothing is going to
+cover up the truth - these plug-ins are Bad with a capital B.
+They look fine on the outside, and might even appear to get the job done, but
+at the end of the day they're a black sheep. Without a golden-haired angel
+to watch over them, they'll probably land in an unmarked grave at the final
+showdown.
+
+
+Don't bug us about their quality - exercise your Free Software rights,
+patch up the offender and send us the patch on the fastest steed you can
+steal from the Confederates. Because you see, in this world, there's two
+kinds of people, my friend: those with loaded guns and those who dig.
+You dig.
+
+
+This module contains a set of plug-ins that aren't up to par compared to the
+rest.  They might be close to being good quality, but they're missing something
+- be it a good code review, some documentation, a set of tests, a real live
+maintainer, or some actual wide use.  If the blanks are filled in they might be
+upgraded to become part of either gst-plugins-good or gst-plugins-ugly,
+depending on the other factors.
+If the plug-ins break, you can't complain - instead, you can fix the
+problem and send us a patch, or bribe someone into fixing them for you.
+New contributors can start here for things to work on.
+
+
+Other modules containing plug-ins are:
+
+
+gst-plugins-base
+contains a basic set of well-supported plug-ins
+gst-plugins-good
+contains a set of well-supported plug-ins under our preferred license
+gst-plugins-ugly
+contains a set of well-supported plug-ins, but might pose problems for
+    distributors
+
+
+
+  
+
+Features of this release
+    
+      * Support shared desktops in RFB input
+      * Make the Quicktime codec wrapper work on win32
+      * Experimental DVD navigation support
+      * Support AAC/H.264 in FLV files
+      * Fixes in the DirectShow codec wrapper
+      * Fix the Real codec wrapper plugin
+      * New deinterlace2 plugin incorporating TVtime deinterlacers
+      * Handle seeking, timestamps, duration in RAW video/audio parsers
+      * New DirectShow video sink for Win32
+      * FAAD reverse playback support
+      * OSS4 support improvements
+      * MythTV seeking support
+      * SPC decoder now supports seeking, tags and duration queries
+      * Replaygain elements moved to Good
+      * Deinterleave/interleave elements fixed and moved to Good
+      * MPEG-4 video stream parser fixes
+      * Improved MPEG-TS parsing for DVB support
+      * Improvements in App source/sink
+      * RTP manager enhancements
+
+Bugs fixed in this release
+     
+      * 533736 : [mythtvsrc] Seeking doesn't work
+      * 544050 : ext/timidity/gsttimidity.c :  ISO C90 forbids mixed decla...
+      * 454151 : SPC plugin enhancements (patch)
+      * 506594 : [interleave] doesn't work with channels > 1
+      * 521392 : Proposed patches for bayer2rgb encoding
+      * 525613 : [wildmidi] [PATCH] initializes library multiple times
+      * 528618 : amrwb plugin do not build without warning with the 3ggp s...
+      * 529359 : BBC Real Audio stream is just noise
+      * 530611 : [gstsrtenc] declare variables at beginning of block
+      * 531840 : QuickTime wrapper doesn't work on Win32
+      * 531955 : gstrtpsession doesn't send RTCP bye on EOS
+      * 532723 : mpeg4videoparse should parse the codec data
+      * 533435 : wildmidi does not work
+      * 533559 : mpeg4videoparse should skip garbage
+      * 535043 : VCD plugin only plays first track
+      * 536042 : mpeg4videoparse broken on big endian architectures
+      * 536258 : interleave doesn't close properly
+      * 536856 : rtpmanager deadlocks when receiving new data while going ...
+      * 538560 : [mpegtsparse] static caps reference counter incremented i...
+      * 539292 : memory leak in mpegtsparse
+      * 539601 : [realvideodec] not-negotiated error if codec lib isn't found
+      * 541522 : cross mingw32 gcc: festival plugin compilation fix
+      * 541543 : fix HAVE_OSS4 detection code in configure.ac
+      * 543286 : deinterlace2 doesn't build outside gcc
+      * 543846 : [resindvd] Impossible to build from the first configure r...
+      * 543848 : [ladspa] Needs to link with -ldl for dlopen() and friends
+      * 543860 : [modplug] Uses CFLAGS for CXXFLAGS
+      * 543861 : [resindvd] Some files not disted
+      * 544457 : -bad doesn't compile with MSVC
+      * 526905 : [musepack] Port to the new libmpcdec API
+      * 532011 : Deadlock in rtpsession
+      * 536309 : Seeking in pipeline with videoparse crashes
+
+Download
+
+You can find source releases of gst-plugins-bad in the download directory:
+http://gstreamer.freedesktop.org/src/gst-plugins-bad/
+
+GStreamer Homepage
+
+More details can be found on the project's website:
+http://gstreamer.freedesktop.org/
+
+Support and Bugs
+
+We use GNOME's bugzilla for bug reports and feature requests:
+http://bugzilla.gnome.org/enter_bug.cgi?product=GStreamer
+
+Developers
+
+CVS is hosted on cvs.freedesktop.org.
+All code is in CVS and can be checked out from there.
+Interested developers of the core library, plug-ins, and applications should
+subscribe to the gstreamer-devel list. If there is sufficient interest we
+will create more lists as necessary.
+
+        
+Applications
+  
+Contributors to this release
+    
+      * Alessandro Decina
+      * Andy Wingo
+      * Bastien Nocera
+      * Brian Koropoff
+      * Clive Wright
+      * Damien Lespiau
+      * David Schleef
+      * Edward Hervey
+      * Håvard Graff
+      * Ilja Pavkovic
+      * Jan Schmidt
+      * Jens Granseuer
+      * Julien Moutte
+      * Mark Nauwelaerts
+      * Martin Eikermann
+      * Michael Smith
+      * Ole André Vadla Ravnås
+      * Olivier Crete
+      * Peter Kjellerstedt
+      * Ryan Houdek
+      * Sebastian Dröge
+      * Sebastian Pölsterl
+      * Sebastien Merle
+      * Sjoerd Simons
+      * Stefan Kost
+      * Thijs Vermeir
+      * Tim-Philipp Müller
+      * Wim Taymans
+      * Zaheer Abbas Merali
+ 

@@ -1,0 +1,96 @@
+<html>
+<head>
+
+<script type="text/javascript" src="rpc_lib/log.js"></script>
+<script type="text/javascript" src="rpc_lib/rpc_types.js"></script>
+<script type="text/javascript" src="rpc_lib/rpc_json.js"></script>
+<script type="text/javascript" src="rpc_lib/rpc_connection.js"></script>
+
+<script type="text/javascript" src="auto/types.js"></script>
+<script type="text/javascript" src="auto/wrappers.js"></script>
+
+</head>
+<body>
+
+<h3> To be run against Client+Server-sample/bin/rpc_http_server_sample </h3>
+<div id='LOGAREA'>Log: </div>
+
+
+<script type="text/javascript">
+
+
+function EqualObjects(a, b)
+{
+  if(a == b) return true;
+  if(a == undefined && b == undefined) return true;
+  
+  if(typeof(a) != 'object' || typeof(b) != 'object')
+  {
+    return false;
+  }
+  if(a.__this_is_an_array == '__this_is_an_array' && b.__this_is_an_array == '__this_is_an_array')
+  {
+    if(a.length != b.length) 
+    { 
+      LOG_DEBUG("EqualObjects: Arrays differ in lenght: " + a.length + " != " + b.length); 
+      return false;
+    }
+    for(var i = 0; i < a.length; i++)
+    {
+      if(!EqualObjects(a[i], b[i])) 
+      { 
+        LOG_DEBUG("EqualObjects: Arrays differ at index " + i); 
+        return false;
+      }
+    }
+  }
+  for(attr in a)
+  {
+    if(b[attr] == undefined)
+    {
+      LOG_DEBUG("EqualObjects: b does not have attribute: " + attr);
+      return false
+    }
+    if(!EqualObjects(a[attr], b[attr]))
+    {
+      LOG_DEBUG("EqualObjects: Objects differ on attribute: " + attr + " : " + a[attr] + " != " + b[attr]);
+      return false;
+    }
+  }
+  return true;
+}
+function ExpectedSuccess(userData, result)
+{
+  var expected = eval('(' + userData.substring("expected.".length) + ')');
+  var success = EqualObjects(expected, result);
+  if(!success && typeof(expected) == 'object' && typeof(result) == 'object')
+  {
+    return "<span style=\"color: orange\"> INCONCLUSIVE </span>";
+  }
+  return success ? "<span style=\"color: green\"> PASS </span>" : 
+                   "<span style=\"color: red\"> FAIL (userData=" + userData + "(=" + expected + ") result=" + result + " </span>";
+}
+
+function AsynRetControllerGetControllableParameters(callStatus, result)
+{
+  LOG_INFO("AsynRetControllerGetParameters: result=" + result + "  " + ExpectedSuccess(callStatus.userData_, result));
+}
+function AsynRetControllerGetValue(callStatus, result)
+{
+  LOG_INFO("AsynRetControllerGetValue: result=" + result + "  " + ExpectedSuccess(callStatus.userData_, result));
+}
+function AsynRetControllerSetValue(callStatus, result)
+{
+  LOG_INFO("AsynRetControllerSetValue: result=" + result + "  " + ExpectedSuccess(callStatus.userData_, result));
+}
+
+var controller = new RPCServiceWrapperController(new RPCHttpXmlConnection("http://localhost/proxypass-8081-media"));
+controller.GetControllableParameters(0, AsynRetControllerGetControllableParameters, "expected.[0,1,2]");
+controller.GetValue(0, AsynRetControllerGetValue, "expected.0");
+controller.SetValue(0, AsynRetControllerSetValue, "expected.true");
+
+</script>
+
+
+</body>
+</html>

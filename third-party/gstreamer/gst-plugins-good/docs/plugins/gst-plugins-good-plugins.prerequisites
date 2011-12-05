@@ -1,0 +1,7 @@
+GstChildProxy GstObject
+GstTagSetter GstObject GstElement
+GstImplementsInterface GstObject GstElement
+GstColorBalance GstObject GstImplementsInterface GstElement
+GstTuner GstObject GstImplementsInterface GstElement
+GstVideoOrientation GstObject GstImplementsInterface GstElement
+GstMixer GstObject GstImplementsInterface GstElement

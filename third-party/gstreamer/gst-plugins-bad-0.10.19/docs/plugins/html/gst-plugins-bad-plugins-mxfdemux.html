@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>mxfdemux</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Bad Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-bad Elements">
+<link rel="prev" href="gst-plugins-bad-plugins-mythtvsrc.html" title="mythtvsrc">
+<link rel="next" href="gst-plugins-bad-plugins-mxfmux.html" title="mxfmux">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-bad-plugins-mythtvsrc.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Bad Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-bad-plugins-mxfmux.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-bad-plugins-mxfdemux.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-mxfdemux.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-mxfdemux.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-mxfdemux.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="mxfdemux">
+<a name="gst-plugins-bad-plugins-mxfdemux"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-bad-plugins-mxfdemux.top_of_page"></a>mxfdemux</span></h2>
+<p>mxfdemux — Demux MXF files</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-bad-plugins-mxfdemux.synopsis"></a><h2>Synopsis</h2>
+<a name="GstMXFDemux"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-bad-plugins-mxfdemux.html#GstMXFDemux-struct" title="GstMXFDemux">GstMXFDemux</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-bad-plugins-mxfdemux.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----GstMXFDemux
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-bad-plugins-mxfdemux.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-bad-plugins-mxfdemux.html#GstMXFDemux--package" title='The "package" property'>package</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-mxfdemux.html#GstMXFDemux--max-drift" title='The "max-drift" property'>max-drift</a>"                <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a>               : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-mxfdemux.html#GstMXFDemux--structure" title='The "structure" property'>structure</a>"                <a href="/usr/share/gtk-doc/html/gstreamer-0.10/gstreamer-GstStructure.html#GstStructure"><span class="type">GstStructure</span></a>*         : Read
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-bad-plugins-mxfdemux.description"></a><h2>Description</h2>
+<p>
+mxfdemux demuxes an MXF file into the different contained streams.
+</p>
+<div class="refsect2" title="Example launch line">
+<a name="id341212"></a><h3>Example launch line</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v filesrc location<span class="symbol">=/</span>path<span class="symbol">/</span>to<span class="symbol">/</span>mxf <span class="symbol">!</span> mxfdemux <span class="symbol">!</span> audioconvert <span class="symbol">!</span> autoaudiosink</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ This pipeline demuxes an MXF file and outputs one of the contained raw audio streams.
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-bad-plugins-mxfdemux.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstMXFDemux">
+<a name="GstMXFDemux-struct"></a><h3>GstMXFDemux</h3>
+<pre class="programlisting">typedef struct _GstMXFDemux GstMXFDemux;</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-bad-plugins-mxfdemux.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "package" property'>
+<a name="GstMXFDemux--package"></a><h3>The <code class="literal">"package"</code> property</h3>
+<pre class="programlisting">  "package"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Material or Source package to use for playback.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "max-drift" property'>
+<a name="GstMXFDemux--max-drift"></a><h3>The <code class="literal">"max-drift"</code> property</h3>
+<pre class="programlisting">  "max-drift"                <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a>               : Read / Write</pre>
+<p>Maximum number of nanoseconds by which tracks can differ.</p>
+<p>Allowed values: &gt;= 100000000</p>
+<p>Default value: 500000000</p>
+</div>
+<hr>
+<div class="refsect2" title='The "structure" property'>
+<a name="GstMXFDemux--structure"></a><h3>The <code class="literal">"structure"</code> property</h3>
+<pre class="programlisting">  "structure"                <a href="/usr/share/gtk-doc/html/gstreamer-0.10/gstreamer-GstStructure.html#GstStructure"><span class="type">GstStructure</span></a>*         : Read</pre>
+<p>Structural metadata of the MXF file.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+project (whispercast)
+
+FILE(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/auto)
+
+SET(RPC_INPUT_FILES ${CMAKE_CURRENT_SOURCE_DIR}/../controller.rpc)
+SET(RPC_OUTPUT_FILES   ${CMAKE_CURRENT_SOURCE_DIR}/auto/types.js
+                       ${CMAKE_CURRENT_SOURCE_DIR}/auto/wrappers.js)
+
+ADD_CUSTOM_COMMAND (
+  OUTPUT  ${RPC_OUTPUT_FILES}
+  COMMAND ${RPC_PARSER_EXE} ${RPC_INPUT_FILES} --js='fTypes="${CMAKE_CURRENT_SOURCE_DIR}/auto/types.js", fWrappers="${CMAKE_CURRENT_SOURCE_DIR}/auto/wrappers.js"'
+  DEPENDS ${RPC_INPUT_FILES}
+  )
+
+ADD_CUSTOM_TARGET(
+  js_controller ALL
+  DEPENDS ${RPC_OUTPUT_FILES}
+  )

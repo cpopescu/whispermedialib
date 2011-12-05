@@ -1,0 +1,58 @@
+#!/bin/bash
+
+VERSION=$1
+shift
+INSTALL_DIR=$1
+shift
+COMMAND=$1
+shift
+
+if [[ ("$COMMAND" != "") && \
+    ("$COMMAND" != "uninstall") && \
+    ("$COMMAND" != "clean") ]]; then
+    echo "Syntax is: gstreamer-make [ uninstall | clean ]"
+    exit 1
+fi
+
+# Build prerequisites
+#
+#if [[ ("$COMMAND" == "")  ]]; then
+#    pushd ./aacplusenc
+#    if [[ (-e config.h) && (config.h -nt configure) ]]; then
+#        echo "aacplusenc was already configured..."
+#    else
+#        echo "Configuring aacplusenc..."
+#        ./configure
+#    fi
+#    echo "Building aacplusenc..."
+#    make
+#    popd
+#fi
+
+# Build each GStreamer set of libraries in order.
+
+if [[ "$VERSION" == "default" ]]; then
+  if ! ./gstreamer-make-one gstreamer $default $INSTALL_DIR $COMMAND; then
+    exit 1
+  fi
+  for DIR in \
+      gst-plugins-base \
+      gst-plugins-good \
+      gst-plugins-ugly \
+      gst-plugins-bad \
+      gst-ffmpeg
+  do
+      echo "============= > " $VERSION > /tmp/xx
+      if ! ./gstreamer-make-one \
+          $DIR $VERSION $INSTALL_DIR $COMMAND; then
+          exit 1
+      fi
+  done
+else
+    ./gstreamer-make-one gstreamer 0.10.29        $INSTALL_DIR $COMMAND || exit 1
+    ./gstreamer-make-one gst-plugins-base 0.10.29 $INSTALL_DIR $COMMAND || exit 1
+    ./gstreamer-make-one gst-plugins-good 0.10.23 $INSTALL_DIR $COMMAND || exit 1
+    ./gstreamer-make-one gst-plugins-ugly 0.10.15 $INSTALL_DIR $COMMAND || exit 1
+    ./gstreamer-make-one gst-plugins-bad 0.10.19  $INSTALL_DIR $COMMAND || exit 1
+    ./gstreamer-make-one gst-ffmpeg 0.10.10       $INSTALL_DIR $COMMAND || exit 1
+fi

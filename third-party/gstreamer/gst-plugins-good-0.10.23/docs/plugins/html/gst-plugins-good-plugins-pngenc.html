@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>pngenc</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Good Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-good Elements">
+<link rel="prev" href="gst-plugins-good-plugins-pngdec.html" title="pngdec">
+<link rel="next" href="gst-plugins-good-plugins-progressreport.html" title="progressreport">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-good-plugins-pngdec.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Good Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-good-plugins-progressreport.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-good-plugins-pngenc.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-pngenc.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-pngenc.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-pngenc.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="pngenc">
+<a name="gst-plugins-good-plugins-pngenc"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-good-plugins-pngenc.top_of_page"></a>pngenc</span></h2>
+<p>pngenc — Encode a video frame to a .png image</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-good-plugins-pngenc.synopsis"></a><h2>Synopsis</h2>
+<a name="GstPngEnc"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-good-plugins-pngenc.html#GstPngEnc-struct" title="GstPngEnc">GstPngEnc</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-good-plugins-pngenc.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----GstPngEnc
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-good-plugins-pngenc.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-good-plugins-pngenc.html#GstPngEnc--compression-level" title='The "compression-level" property'>compression-level</a>"        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-pngenc.html#GstPngEnc--snapshot" title='The "snapshot" property'>snapshot</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-good-plugins-pngenc.description"></a><h2>Description</h2>
+<p>
+Encodes png images.
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-good-plugins-pngenc.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstPngEnc">
+<a name="GstPngEnc-struct"></a><h3>GstPngEnc</h3>
+<pre class="programlisting">typedef struct _GstPngEnc GstPngEnc;</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-good-plugins-pngenc.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "compression-level" property'>
+<a name="GstPngEnc--compression-level"></a><h3>The <code class="literal">"compression-level"</code> property</h3>
+<pre class="programlisting">  "compression-level"        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
+<p>PNG compression level.</p>
+<p>Allowed values: &lt;= 9</p>
+<p>Default value: 6</p>
+</div>
+<hr>
+<div class="refsect2" title='The "snapshot" property'>
+<a name="GstPngEnc--snapshot"></a><h3>The <code class="literal">"snapshot"</code> property</h3>
+<pre class="programlisting">  "snapshot"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Send EOS after encoding a frame, useful for snapshots.</p>
+<p>Default value: TRUE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

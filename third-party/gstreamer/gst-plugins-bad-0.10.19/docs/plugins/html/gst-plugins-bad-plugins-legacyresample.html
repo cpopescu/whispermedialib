@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>legacyresample</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Bad Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-bad Elements">
+<link rel="prev" href="gst-plugins-bad-plugins-ladspa.html" title="ladspa">
+<link rel="next" href="gst-plugins-bad-plugins-liveadder.html" title="liveadder">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-bad-plugins-ladspa.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Bad Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-bad-plugins-liveadder.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-bad-plugins-legacyresample.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-legacyresample.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-legacyresample.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-legacyresample.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="legacyresample">
+<a name="gst-plugins-bad-plugins-legacyresample"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-bad-plugins-legacyresample.top_of_page"></a>legacyresample</span></h2>
+<p>legacyresample — Resample audio</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-bad-plugins-legacyresample.synopsis"></a><h2>Synopsis</h2>
+<a name="GstLegacyresample"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-bad-plugins-legacyresample.html#GstLegacyresample-struct" title="GstLegacyresample">GstLegacyresample</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-bad-plugins-legacyresample.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----<a href="/usr/share/gtk-doc/html/gstreamer-libs-0.10/GstBaseTransform.html">GstBaseTransform</a>
+                     +----GstLegacyresample
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-bad-plugins-legacyresample.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-bad-plugins-legacyresample.html#GstLegacyresample--filter-length" title='The "filter-length" property'>filter-length</a>"            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write / Construct
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-bad-plugins-legacyresample.description"></a><h2>Description</h2>
+<p>
+legacyresample resamples raw audio buffers to different sample rates using
+a configurable windowing function to enhance quality.
+</p>
+<div class="refsect2" title="Example launch line">
+<a name="id388040"></a><h3>Example launch line</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v filesrc location<span class="symbol">=</span>sine<span class="symbol">.</span>ogg <span class="symbol">!</span> oggdemux <span class="symbol">!</span> vorbisdec <span class="symbol">!</span> audioconvert <span class="symbol">!</span> legacyresample <span class="symbol">!</span> audio<span class="symbol">/</span>x<span class="symbol">-</span>raw<span class="symbol">-</span><span class="gtkdoc kwb">int</span><span class="symbol">,</span> rate<span class="symbol">=</span><span class="number">8000</span> <span class="symbol">!</span> alsasink</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ Decode an Ogg/Vorbis downsample to 8Khz and play sound through alsa. 
+To create the Ogg/Vorbis file refer to the documentation of vorbisenc.
+</div>
+<p>
+Last reviewed on 2006-03-02 (0.10.4)
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-bad-plugins-legacyresample.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstLegacyresample">
+<a name="GstLegacyresample-struct"></a><h3>GstLegacyresample</h3>
+<pre class="programlisting">typedef struct _GstLegacyresample GstLegacyresample;</pre>
+<p>
+Opaque data structure.
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-bad-plugins-legacyresample.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "filter-length" property'>
+<a name="GstLegacyresample--filter-length"></a><h3>The <code class="literal">"filter-length"</code> property</h3>
+<pre class="programlisting">  "filter-length"            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write / Construct</pre>
+<p>Length of the resample filter.</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 16</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

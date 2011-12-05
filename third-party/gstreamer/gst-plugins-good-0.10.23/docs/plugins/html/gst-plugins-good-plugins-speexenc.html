@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>speexenc</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Good Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-good Elements">
+<link rel="prev" href="gst-plugins-good-plugins-spectrum.html" title="spectrum">
+<link rel="next" href="gst-plugins-good-plugins-speexdec.html" title="speexdec">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-good-plugins-spectrum.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Good Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-good-plugins-speexdec.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-good-plugins-speexenc.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-speexenc.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-speexenc.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-speexenc.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-speexenc.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="speexenc">
+<a name="gst-plugins-good-plugins-speexenc"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-good-plugins-speexenc.top_of_page"></a>speexenc</span></h2>
+<p>speexenc — Encodes audio in Speex format</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-good-plugins-speexenc.synopsis"></a><h2>Synopsis</h2>
+<a name="GstSpeexEnc"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc-struct" title="GstSpeexEnc">GstSpeexEnc</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-good-plugins-speexenc.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----GstSpeexEnc
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="gst-plugins-good-plugins-speexenc.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GstSpeexEnc implements
+ <a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstTagSetter.html">GstTagSetter</a> and  <a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstPreset.html">GstPreset</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-good-plugins-speexenc.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--abr" title='The "abr" property'>abr</a>"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--bitrate" title='The "bitrate" property'>bitrate</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--complexity" title='The "complexity" property'>complexity</a>"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--dtx" title='The "dtx" property'>dtx</a>"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--last-message" title='The "last-message" property'>last-message</a>"             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--nframes" title='The "nframes" property'>nframes</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--quality" title='The "quality" property'>quality</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gfloat"><span class="type">gfloat</span></a>                : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--vad" title='The "vad" property'>vad</a>"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--vbr" title='The "vbr" property'>vbr</a>"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-speexenc.html#GstSpeexEnc--mode" title='The "mode" property'>mode</a>"                     <span class="type">GstSpeexEncMode</span>       : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-good-plugins-speexenc.description"></a><h2>Description</h2>
+<p>
+This element encodes audio as a Speex stream.
+<a class="ulink" href="http://www.speex.org/" target="_top">Speex</a> is a royalty-free
+audio codec maintained by the <a class="ulink" href="http://www.xiph.org/" target="_top">Xiph.org
+Foundation</a>.
+</p>
+<div class="refsect2" title="Example pipelines">
+<a name="id598985"></a><h3>Example pipelines</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch audiotestsrc num<span class="symbol">-</span>buffers<span class="symbol">=</span><span class="number">100</span> <span class="symbol">!</span> speexenc <span class="symbol">!</span> oggmux <span class="symbol">!</span> filesink location<span class="symbol">=</span>beep<span class="symbol">.</span>ogg</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ Encode an Ogg/Speex file.
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-good-plugins-speexenc.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstSpeexEnc">
+<a name="GstSpeexEnc-struct"></a><h3>GstSpeexEnc</h3>
+<pre class="programlisting">typedef struct _GstSpeexEnc GstSpeexEnc;</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-good-plugins-speexenc.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "abr" property'>
+<a name="GstSpeexEnc--abr"></a><h3>The <code class="literal">"abr"</code> property</h3>
+<pre class="programlisting">  "abr"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>Enable average bit-rate (0 = disabled).</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2" title='The "bitrate" property'>
+<a name="GstSpeexEnc--bitrate"></a><h3>The <code class="literal">"bitrate"</code> property</h3>
+<pre class="programlisting">  "bitrate"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>Specify an encoding bit-rate (in bps). (0 = automatic).</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2" title='The "complexity" property'>
+<a name="GstSpeexEnc--complexity"></a><h3>The <code class="literal">"complexity"</code> property</h3>
+<pre class="programlisting">  "complexity"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>Set encoding complexity.</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 3</p>
+</div>
+<hr>
+<div class="refsect2" title='The "dtx" property'>
+<a name="GstSpeexEnc--dtx"></a><h3>The <code class="literal">"dtx"</code> property</h3>
+<pre class="programlisting">  "dtx"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Enable discontinuous transmission.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "last-message" property'>
+<a name="GstSpeexEnc--last-message"></a><h3>The <code class="literal">"last-message"</code> property</h3>
+<pre class="programlisting">  "last-message"             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p>The last status message.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "nframes" property'>
+<a name="GstSpeexEnc--nframes"></a><h3>The <code class="literal">"nframes"</code> property</h3>
+<pre class="programlisting">  "nframes"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>Number of frames per buffer.</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 1</p>
+</div>
+<hr>
+<div class="refsect2" title='The "quality" property'>
+<a name="GstSpeexEnc--quality"></a><h3>The <code class="literal">"quality"</code> property</h3>
+<pre class="programlisting">  "quality"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gfloat"><span class="type">gfloat</span></a>                : Read / Write</pre>
+<p>Encoding quality.</p>
+<p>Allowed values: [0,10]</p>
+<p>Default value: 8</p>
+</div>
+<hr>
+<div class="refsect2" title='The "vad" property'>
+<a name="GstSpeexEnc--vad"></a><h3>The <code class="literal">"vad"</code> property</h3>
+<pre class="programlisting">  "vad"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Enable voice activity detection.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "vbr" property'>
+<a name="GstSpeexEnc--vbr"></a><h3>The <code class="literal">"vbr"</code> property</h3>
+<pre class="programlisting">  "vbr"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Enable variable bit-rate.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "mode" property'>
+<a name="GstSpeexEnc--mode"></a><h3>The <code class="literal">"mode"</code> property</h3>
+<pre class="programlisting">  "mode"                     <span class="type">GstSpeexEncMode</span>       : Read / Write</pre>
+<p>The encoding mode.</p>
+<p>Default value: Auto</p>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="gst-plugins-good-plugins-speexenc.see-also"></a><h2>See Also</h2>
+speexdec, oggmux
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+#!/bin/bash
+
+DIR=$1
+shift
+VERSION=$1
+shift
+INSTALL_DIR=$1
+shift
+COMMAND=$1
+shift
+
+if [[ ("$COMMAND" != "") && \
+    ("$COMMAND" != "uninstall") && \
+    ("$COMMAND" != "clean") || (! -d "$DIR") ]]; then
+  echo "Syntax is: gstreamer-make-one directory install-dir [ uninstall ]"
+  exit 1
+fi
+
+NUM_PROCS=$(grep  "^processor" /proc/cpuinfo | wc -l)
+if [[ "$NUM_PROCS" != "" ]]; then
+  MAKE_ARGS="-j $NUM_PROCS"
+else
+  MAKE_ARGS=""
+fi
+
+if [[ "$VERSION" == "default" ]]; then
+cd $DIR
+else
+cd $DIR-$VERSION
+fi
+
+LIB_INSTALL_DIR=$INSTALL_DIR"/gstreamer"
+mkdir -p LIB_INSTALL_DIR
+
+export PKG_CONFIG_PATH="$LIB_INSTALL_DIR/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+if [[ "$COMMAND" == "" ]]; then
+    # DEFAULT => Make & Install the target
+    if [[ (-e Makefile) && \
+        (Makefile -nt configure) && \
+        ("$(cat $INSTALL_DIR/$DIR.$VERSION.configured)" == "$LIB_INSTALL_DIR") ]]; then
+        echo "\"$DIR\" already configured..."
+    else
+        if [[ "$DIR" == "gstreamer" ]]; then
+            CONFIG_OPTIONS="--disable-loadsave \
+                            --disable-examples \
+                            --disable-tests \
+                            --enable-binary-registry"
+        else
+            if [[ "$DIR" == "gst-plugins-base" ]]; then
+                CONFIG_OPTIONS="--disable-examples --disable-annodex --disable-x --disable-xshm --disable-xvideo --disable-ogg --disable-oggtest --disable-theora"
+            fi
+            if [[ "$DIR" == "gst-plugins-good" ]]; then
+                CONFIG_OPTIONS="--disable-examples --disable-annodex --disable-x --disable-xshm --disable-shout2 --disable-xvideo --disable-flac --disable-speex --disable-libcaca --disable-gst_v4l2"
+            fi
+            if [[ "$DIR" == "gst-plugins-ugly" ]]; then
+                CONFIG_OPTIONS="--disable-examples --disable-annodex"
+            fi
+            if [[ "$DIR" == "gst-plugins-bad" ]]; then
+                CONFIG_OPTIONS="--disable-examples --disable-annodex --disable-theoradec --disable-dts --disable-gsm"
+            fi
+            if [[ "$DIR" == "gst-ffmpeg" ]]; then
+                CONFIG_OPTIONS="--disable-examples --disable-annodex"
+            fi
+        fi
+        echo "Configuring \"$DIR\" with \"$CONFIG_OPTIONS\"..."
+        if [[ "$DIR" == "gst-ffmpeg" ]]; then
+            touch "gst-libs/ext/ffmpeg/config.mak"
+        fi
+        if ! ./configure --prefix=$LIB_INSTALL_DIR \
+            --enable-experimental $CONFIG_OPTIONS; then
+            echo
+            echo "\"$DIR\" configure failed, fatal."
+            cd ..
+            exit 1
+        fi
+        echo "$LIB_INSTALL_DIR" > $INSTALL_DIR/$DIR.$VERSION.configured
+    fi
+
+    if [[ (-e "$INSTALL_DIR/$DIR.$VERSION.installed") && \
+        ("$INSTALL_DIR/$DIR.$VERSION.installed" -nt Makefile) ]]; then
+        echo "\"$DIR\" already installed."
+    else
+        echo "Building \"$DIR\"..."
+        if make $MAKE_ARGS; then
+            echo "\"$DIR\"-\"$VERSION\" building done."
+        else
+            echo
+            echo "\"$DIR\"-\"$VERSION\" building failed (check the output, \
+                  as this might be non-fatal)."
+            cd ..
+            exit 1
+        fi
+        if make install; then
+            echo "\"$DIR\"-\"$VERSION\" installing done."
+            touch "$INSTALL_DIR/$DIR.$VERSION.installed"
+        else
+            echo
+            echo "\"$DIR\"-\"$VERSION\" installing failed (check the output, \
+                  as this might be non-fatal)."
+            cd ..
+            exit 1
+        fi
+    fi
+else
+    if [[ "$COMMAND" == "clean" ]]; then
+        echo "Cleaning \"$DIR\"..."
+        rm -f "$INSTALL_DIR/$DIR.$VERSION.installed"
+        make clean
+    else
+        if [[ "$COMMAND" == "uninstall" ]]; then
+            echo "Uninstalling \"$DIR\"..."
+            rm -f "$INSTALL_DIR/$DIR.$VERSION.installed"
+            make uninstall
+            make distclean
+        fi
+    fi
+fi
+
+cd ..

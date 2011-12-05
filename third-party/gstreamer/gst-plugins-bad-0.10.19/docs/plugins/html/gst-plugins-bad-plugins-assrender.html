@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>assrender</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Bad Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-bad Elements">
+<link rel="prev" href="gst-plugins-bad-plugins-amrwbenc.html" title="amrwbenc">
+<link rel="next" href="gst-plugins-bad-plugins-autoconvert.html" title="autoconvert">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-bad-plugins-amrwbenc.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Bad Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-bad-plugins-autoconvert.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-bad-plugins-assrender.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-assrender.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-assrender.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-assrender.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="assrender">
+<a name="gst-plugins-bad-plugins-assrender"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-bad-plugins-assrender.top_of_page"></a>assrender</span></h2>
+<p>assrender — Renders ASS/SSA subtitles with libass</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-bad-plugins-assrender.synopsis"></a><h2>Synopsis</h2>
+<a name="GstAssRender"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-bad-plugins-assrender.html#GstAssRender-struct" title="GstAssRender">GstAssRender</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-bad-plugins-assrender.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----GstAssRender
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-bad-plugins-assrender.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-bad-plugins-assrender.html#GstAssRender--embeddedfonts" title='The "embeddedfonts" property'>embeddedfonts</a>"            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-assrender.html#GstAssRender--enable" title='The "enable" property'>enable</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-bad-plugins-assrender.description"></a><h2>Description</h2>
+<p>
+Renders timestamped SSA/ASS subtitles on top of a video stream.
+</p>
+<div class="refsect2" title="Example launch line">
+<a name="id358580"></a><h3>Example launch line</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v filesrc location<span class="symbol">=/</span>path<span class="symbol">/</span>to<span class="symbol">/</span>mkv <span class="symbol">!</span> matroskademux name<span class="symbol">=</span>d <span class="symbol">!</span> queue <span class="symbol">!</span> mp3parse <span class="symbol">!</span> mad <span class="symbol">!</span> audioconvert <span class="symbol">!</span> autoaudiosink  d<span class="symbol">. !</span> queue <span class="symbol">!</span> ffdec_h264 <span class="symbol">!</span> ffmpegcolorspace <span class="symbol">!</span> r<span class="symbol">.</span>   d<span class="symbol">. !</span> queue <span class="symbol">!</span> <span class="string">&quot;application/x-ass&quot;</span> <span class="symbol">!</span> assrender name<span class="symbol">=</span>r <span class="symbol">!</span> ffmpegcolorspace <span class="symbol">!</span> autovideosink</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ This pipeline demuxes a Matroska file with h.264 video, MP3 audio and embedded ASS subtitles and renders the subtitles on top of the video.
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-bad-plugins-assrender.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstAssRender">
+<a name="GstAssRender-struct"></a><h3>GstAssRender</h3>
+<pre class="programlisting">typedef struct _GstAssRender GstAssRender;</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-bad-plugins-assrender.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "embeddedfonts" property'>
+<a name="GstAssRender--embeddedfonts"></a><h3>The <code class="literal">"embeddedfonts"</code> property</h3>
+<pre class="programlisting">  "embeddedfonts"            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Extract and use fonts embedded in the stream.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "enable" property'>
+<a name="GstAssRender--enable"></a><h3>The <code class="literal">"enable"</code> property</h3>
+<pre class="programlisting">  "enable"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Enable rendering of subtitles.</p>
+<p>Default value: TRUE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

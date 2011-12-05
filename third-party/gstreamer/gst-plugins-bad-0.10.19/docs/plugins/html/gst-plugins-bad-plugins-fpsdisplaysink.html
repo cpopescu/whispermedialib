@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fpsdisplaysink</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Bad Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-bad Elements">
+<link rel="prev" href="gst-plugins-bad-plugins-flacparse.html" title="flacparse">
+<link rel="next" href="gst-plugins-bad-plugins-freeze.html" title="freeze">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-bad-plugins-flacparse.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Bad Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-bad-plugins-freeze.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-bad-plugins-fpsdisplaysink.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-fpsdisplaysink.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-fpsdisplaysink.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-fpsdisplaysink.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-fpsdisplaysink.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="fpsdisplaysink">
+<a name="gst-plugins-bad-plugins-fpsdisplaysink"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-bad-plugins-fpsdisplaysink.top_of_page"></a>fpsdisplaysink</span></h2>
+<p>fpsdisplaysink — Shows the current frame-rate and drop-rate of the videosink as overlay or text on stdout</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-bad-plugins-fpsdisplaysink.synopsis"></a><h2>Synopsis</h2>
+<a name="GstFPSDisplaySink"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-bad-plugins-fpsdisplaysink.html#GstFPSDisplaySink-struct" title="GstFPSDisplaySink">GstFPSDisplaySink</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-bad-plugins-fpsdisplaysink.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstBin.html">GstBin</a>
+                     +----GstFPSDisplaySink
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="gst-plugins-bad-plugins-fpsdisplaysink.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GstFPSDisplaySink implements
+ <a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstChildProxy.html">GstChildProxy</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-bad-plugins-fpsdisplaysink.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-bad-plugins-fpsdisplaysink.html#GstFPSDisplaySink--sync" title='The "sync" property'>sync</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-fpsdisplaysink.html#GstFPSDisplaySink--text-overlay" title='The "text-overlay" property'>text-overlay</a>"             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="gst-plugins-bad-plugins-fpsdisplaysink.html#GstFPSDisplaySink--video-sink" title='The "video-sink" property'>video-sink</a>"               <a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html"><span class="type">GstElement</span></a>*           : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-bad-plugins-fpsdisplaysink.description"></a><h2>Description</h2>
+<p>
+Can display the current and average framerate as a testoverlay or on stdout.
+</p>
+<div class="refsect2" title="Example launch lines">
+<a name="id388761"></a><h3>Example launch lines</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch videotestsrc <span class="symbol">!</span> fpsdisplaysink
+gst<span class="symbol">-</span>launch videotestsrc <span class="symbol">!</span> fpsdisplaysink text<span class="symbol">-</span>overlay<span class="symbol">=</span><span class="keyword">false</span>
+gst<span class="symbol">-</span>launch filesrc location<span class="symbol">=</span>video<span class="symbol">.</span>avi <span class="symbol">!</span> decodebin2 name<span class="symbol">=</span>d <span class="symbol">!</span> queue <span class="symbol">!</span> fpsdisplaysink d<span class="symbol">. !</span> queue <span class="symbol">!</span> fakesink sync<span class="symbol">=</span><span class="keyword">true</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-bad-plugins-fpsdisplaysink.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstFPSDisplaySink">
+<a name="GstFPSDisplaySink-struct"></a><h3>GstFPSDisplaySink</h3>
+<pre class="programlisting">typedef struct _GstFPSDisplaySink GstFPSDisplaySink;</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-bad-plugins-fpsdisplaysink.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "sync" property'>
+<a name="GstFPSDisplaySink--sync"></a><h3>The <code class="literal">"sync"</code> property</h3>
+<pre class="programlisting">  "sync"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Sync on the clock (if the internally used sink doesn't have this property it will be ignored.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "text-overlay" property'>
+<a name="GstFPSDisplaySink--text-overlay"></a><h3>The <code class="literal">"text-overlay"</code> property</h3>
+<pre class="programlisting">  "text-overlay"             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Whether to use text-overlay.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "video-sink" property'>
+<a name="GstFPSDisplaySink--video-sink"></a><h3>The <code class="literal">"video-sink"</code> property</h3>
+<pre class="programlisting">  "video-sink"               <a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html"><span class="type">GstElement</span></a>*           : Read / Write</pre>
+<p>Video sink to use (Must only be called on NULL state).</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>freeze</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Bad Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-bad Elements">
+<link rel="prev" href="gst-plugins-bad-plugins-fpsdisplaysink.html" title="fpsdisplaysink">
+<link rel="next" href="gst-plugins-bad-plugins-input-selector.html" title="input-selector">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-bad-plugins-fpsdisplaysink.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Bad Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-bad-plugins-input-selector.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-bad-plugins-freeze.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-freeze.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-freeze.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-bad-plugins-freeze.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="freeze">
+<a name="gst-plugins-bad-plugins-freeze"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-bad-plugins-freeze.top_of_page"></a>freeze</span></h2>
+<p>freeze — Makes a stream from buffers of data</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-bad-plugins-freeze.synopsis"></a><h2>Synopsis</h2>
+<a name="GstFreeze"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-bad-plugins-freeze.html#GstFreeze-struct" title="GstFreeze">GstFreeze</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-bad-plugins-freeze.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----GstFreeze
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-bad-plugins-freeze.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-bad-plugins-freeze.html#GstFreeze--max-buffers" title='The "max-buffers" property'>max-buffers</a>"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-bad-plugins-freeze.description"></a><h2>Description</h2>
+<p>
+Makes a stream from buffers of data.
+</p>
+<div class="refsect2" title="Example launch line">
+<a name="id385176"></a><h3>Example launch line</h3>
+<p>
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch<span class="symbol">-</span><span class="number">0.10</span> filesrc location<span class="symbol">=</span>gnome<span class="symbol">-</span>home<span class="symbol">.</span>png blocksize<span class="symbol">=</span><span class="number">4135</span> <span class="symbol">!</span>  pngdec <span class="symbol">!</span> freeze <span class="symbol">!</span> ffmpegcolorspace <span class="symbol">!</span> xvimagesink</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p> Produces a video stream from one picture.
+</p>
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-bad-plugins-freeze.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstFreeze">
+<a name="GstFreeze-struct"></a><h3>GstFreeze</h3>
+<pre class="programlisting">typedef struct _GstFreeze GstFreeze;</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-bad-plugins-freeze.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "max-buffers" property'>
+<a name="GstFreeze--max-buffers"></a><h3>The <code class="literal">"max-buffers"</code> property</h3>
+<pre class="programlisting">  "max-buffers"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
+<p>Maximum number of buffers.</p>
+<p>Default value: 1</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

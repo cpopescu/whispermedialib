@@ -1,0 +1,13 @@
+Source: aacplusenc
+Build-Depends: debhelper, fftw3-dev
+Section: sound
+Priority: optional
+Standards-Version: 3.7.3
+Maintainer: Matteo Croce <rootkit85@yahoo.it>
+
+Package: aacplusenc
+Architecture: any
+Section: sound
+Priority: optional
+Depends: ${shlibs:Depends}
+Description: High-Efficency AAC (AAC+) Encoder

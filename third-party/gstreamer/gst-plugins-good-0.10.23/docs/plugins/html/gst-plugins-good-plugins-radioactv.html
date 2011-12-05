@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>radioactv</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GStreamer Good Plugins 0.10 Plugins Reference Manual">
+<link rel="up" href="ch01.html" title="gst-plugins-good Elements">
+<link rel="prev" href="gst-plugins-good-plugins-qtdemux.html" title="qtdemux">
+<link rel="next" href="gst-plugins-good-plugins-revtv.html" title="revtv">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gst-plugins-good-plugins-qtdemux.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GStreamer Good Plugins 0.10 Plugins Reference Manual</th>
+<td><a accesskey="n" href="gst-plugins-good-plugins-revtv.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gst-plugins-good-plugins-radioactv.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-radioactv.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-radioactv.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#gst-plugins-good-plugins-radioactv.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="radioactv">
+<a name="gst-plugins-good-plugins-radioactv"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gst-plugins-good-plugins-radioactv.top_of_page"></a>radioactv</span></h2>
+<p>radioactv — motion-enlightment effect</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gst-plugins-good-plugins-radioactv.synopsis"></a><h2>Synopsis</h2>
+<a name="GstRadioacTV"></a><pre class="synopsis">                    <a class="link" href="gst-plugins-good-plugins-radioactv.html#GstRadioacTV-struct" title="GstRadioacTV">GstRadioacTV</a>;
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="gst-plugins-good-plugins-radioactv.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstObject.html">GstObject</a>
+         +----<a href="/usr/share/gtk-doc/html/gstreamer-0.10/GstElement.html">GstElement</a>
+               +----<a href="/usr/share/gtk-doc/html/gstreamer-libs-0.10/GstBaseTransform.html">GstBaseTransform</a>
+                     +----<a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-0.10/gst-plugins-base-libs-gstvideofilter.html#GstVideoFilter">GstVideoFilter</a>
+                           +----GstRadioacTV
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="gst-plugins-good-plugins-radioactv.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="gst-plugins-good-plugins-radioactv.html#GstRadioacTV--color" title='The "color" property'>color</a>"                    <span class="type">GstRadioacTVColor</span>     : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-radioactv.html#GstRadioacTV--interval" title='The "interval" property'>interval</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-radioactv.html#GstRadioacTV--mode" title='The "mode" property'>mode</a>"                     <span class="type">GstRadioacTVMode</span>      : Read / Write
+  "<a class="link" href="gst-plugins-good-plugins-radioactv.html#GstRadioacTV--trigger" title='The "trigger" property'>trigger</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gst-plugins-good-plugins-radioactv.description"></a><h2>Description</h2>
+<p>
+RadioacTV does *NOT* detect a radioactivity. It detects a difference
+from previous frame and blurs it.
+</p>
+<p>
+RadioacTV has 4 mode, normal, strobe1, strobe2 and trigger.
+In trigger mode, effect appears only when the trigger property is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
+</p>
+<p>
+strobe1 and strobe2 mode drops some frames. strobe1 mode uses the difference between
+current frame and previous frame dropped, while strobe2 mode uses the difference from
+previous frame displayed. The effect of strobe2 is stronger than strobe1.
+</p>
+<div class="refsect2" title="Example launch line">
+<a name="id596475"></a><h3>Example launch line</h3>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">gst<span class="symbol">-</span>launch <span class="symbol">-</span>v videotestsrc <span class="symbol">!</span> radioactv <span class="symbol">!</span> ffmpegcolorspace <span class="symbol">!</span> autovideosink</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ This pipeline shows the effect of radioactv on a test stream.
+</div>
+</div>
+<div class="refsect1" title="Details">
+<a name="gst-plugins-good-plugins-radioactv.details"></a><h2>Details</h2>
+<div class="refsect2" title="GstRadioacTV">
+<a name="GstRadioacTV-struct"></a><h3>GstRadioacTV</h3>
+<pre class="programlisting">typedef struct _GstRadioacTV GstRadioacTV;</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="gst-plugins-good-plugins-radioactv.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "color" property'>
+<a name="GstRadioacTV--color"></a><h3>The <code class="literal">"color"</code> property</h3>
+<pre class="programlisting">  "color"                    <span class="type">GstRadioacTVColor</span>     : Read / Write</pre>
+<p>Color.</p>
+<p>Default value: White</p>
+</div>
+<hr>
+<div class="refsect2" title='The "interval" property'>
+<a name="GstRadioacTV--interval"></a><h3>The <code class="literal">"interval"</code> property</h3>
+<pre class="programlisting">  "interval"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
+<p>Snapshot interval (in strobe mode).</p>
+<p>Allowed values: &lt;= G_MAXINT</p>
+<p>Default value: 3</p>
+</div>
+<hr>
+<div class="refsect2" title='The "mode" property'>
+<a name="GstRadioacTV--mode"></a><h3>The <code class="literal">"mode"</code> property</h3>
+<pre class="programlisting">  "mode"                     <span class="type">GstRadioacTVMode</span>      : Read / Write</pre>
+<p>Mode.</p>
+<p>Default value: Normal</p>
+</div>
+<hr>
+<div class="refsect2" title='The "trigger" property'>
+<a name="GstRadioacTV--trigger"></a><h3>The <code class="literal">"trigger"</code> property</h3>
+<pre class="programlisting">  "trigger"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Trigger (in trigger mode).</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>
