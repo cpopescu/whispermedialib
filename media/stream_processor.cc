@@ -91,7 +91,7 @@ int32 WriteFrameHeader(io::MemoryStream* output,
     written += output->Write(mime_type, length);
   }
 
-  DLOG(10) << strutil::StringPrintf(
+  DLOG_INFO << strutil::StringPrintf(
       "FRAME PROCESSED {%c%c%c%c%c%c%c%c : %08d, %08d, %s}",
       flags & streaming::HEADER ? 'H' : '-',
       flags & streaming::AUDIO ? 'A' : '-',

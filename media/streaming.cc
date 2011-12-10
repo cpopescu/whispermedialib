@@ -115,7 +115,7 @@ void __gst_log_function(GstDebugCategory* category,
 
   switch (level) {
     case GST_LEVEL_ERROR:
-      LOG_FILE_LINE_ERROR(file, line) <<
+      LOG_ERROR << "file: " << file << ":" << line << " " <<
       gst_debug_level_get_name(level) << " " <<
       gst_debug_category_get_name(category) << " " <<
       function << ":" << (object ?
@@ -124,7 +124,7 @@ void __gst_log_function(GstDebugCategory* category,
       gst_debug_message_get(message);
       break;
     case GST_LEVEL_WARNING:
-      LOG_FILE_LINE_WARNING(file, line) <<
+      LOG_WARNING << "file: " << file << ":" << line << " " <<
       gst_debug_level_get_name(level) << " " <<
       gst_debug_category_get_name(category) << " " <<
       function << ":" << (object ?
@@ -133,7 +133,7 @@ void __gst_log_function(GstDebugCategory* category,
       gst_debug_message_get(message);
       break;
     case GST_LEVEL_INFO:
-      LOG_FILE_LINE_INFO(file, line) <<
+      LOG_INFO << "file: " << file << ":" << line << " " <<
       gst_debug_level_get_name(level) << " " <<
       gst_debug_category_get_name(category) << " " <<
       function << ":" << (object ?
@@ -142,7 +142,7 @@ void __gst_log_function(GstDebugCategory* category,
       gst_debug_message_get(message);
       break;
     case GST_LEVEL_DEBUG:
-      LOG_FILE_LINE_DEBUG(file, line) <<
+      LOG_INFO << "file: " << file << ":" << line << " " <<
       gst_debug_level_get_name(level) << " " <<
       gst_debug_category_get_name(category) << " " <<
       function << ":" << (object ?
@@ -151,7 +151,7 @@ void __gst_log_function(GstDebugCategory* category,
       gst_debug_message_get(message);
       break;
     case GST_LEVEL_LOG:
-      LOG_FILE_LINE_INFO(file, line) <<
+      LOG_INFO << "file: " << file << ":" << line << " " <<
       gst_debug_level_get_name(level) << " " <<
       gst_debug_category_get_name(category) << " " <<
       function << ":" << (object ?
